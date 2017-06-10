@@ -4,7 +4,7 @@ use ArmoredCore\WebObjects\Post;
 use ArmoredCore\WebObjects\Redirect;
 use ArmoredCore\WebObjects\View;
 use ArmoredCore\Interfaces\ResourceControllerInterface;
-use User;
+
 /**
  * Created by PhpStorm.
  * User: smendes
@@ -26,7 +26,8 @@ class UserController extends BaseController  {
 
         $new = new User();
         $new->username = $_POST["username"];
-        $new->password = $_POST["password"];
+        $pass=$_POST["password"];
+        $new->password = sha1($pass);
         $new->fullname = $_POST["fullname"];
         $time= strtotime ( $_POST["datebirth"]);
         $date = date('Y-m-d',$time);

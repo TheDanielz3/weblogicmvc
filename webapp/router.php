@@ -22,7 +22,8 @@ Router::get('home/topten','HomeController/topten');
 
 Router::post('home/submitlogin','HomeController/submitlogin');
 
-Router::get('user/register','UserController/register');
+Router::get('home/register','HomeController/register');
+router::post('user/register','UserController/register');
 Router::get('user/edit','UserController/edit');
 
 Router::get('user/','UserController/index');

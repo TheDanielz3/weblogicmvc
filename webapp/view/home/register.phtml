@@ -16,31 +16,31 @@ Layout::includeLayout('header'); ?>
         <div class="panel-body">
             <h3 class="thin text-center">Insert your data to create your account</h3>
 
-            <form>
+            <form action="<?php echo Url::toRoute('user/register')?>" method="post">
                 <div class="top-margin">
                     <label>Full Name <span class="text-danger"></span></label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="fullname" class="form-control">
                 </div>
                 <div class="top-margin">
                     <label>Username <span class="text-danger"></span></label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="username" class="form-control">
                 </div>
                 <div class="top-margin">
                     <label>Email <span class="text-danger"></span></label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="email" placeholder="email@email.com" class="form-control">
                 </div>
                 <div class="top-margin">
                     <label>Password <span class="text-danger"></span></label>
-                    <input type="password" class="form-control">
+                    <input type="password" name="password" class="form-control">
                 </div>
 
                 <div class="top-margin">
                     <label>BirthDate <span class="text-danger"></span></label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="birthdate" class="form-control">
                 </div>
                 <br>
                 <div class="col-lg-7 text-right" >
-                    <button class="btn btn-action" type="submit" background-color="red">REGISTER</button>
+                    <button class="btn btn-action" type="submit"  background-color="red">REGISTER</button>
                 </div>
 
 
