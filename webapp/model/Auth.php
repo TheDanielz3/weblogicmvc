@@ -37,21 +37,18 @@ class Auth
 
     public function findUserByNameAndPass($username,$password){
 
-       $user = new User();
-
        $password= sha1($password);
 
-        try{
             if (User::find(array('conditions' => array('username = ? AND password = ?',$username,$password)))!= null){
 
-                $user = User::find(array('conditions' => array('username = ? AND password = ?',$username,$password)));
-                session_start($user);
+                    $user = User::find(array('conditions' => array('username = ? AND password = ?',$username,$password)));
 
+
+
+              return $user;
             }else{
-
+                return ;
             }
-        }catch (Exception $e){}
-
     }
 }
 ?>

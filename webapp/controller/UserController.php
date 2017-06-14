@@ -20,10 +20,23 @@ class UserController extends BaseController  {
     public function login(){
 
         $auth = new Auth();
-        $auth->findUserByNameAndPass($_POST['username'],$_POST['password']);
+        $user= new User();
 
-        Redirect::toRoute('home/index');
+        $temp = $auth->findUserByNameAndPass($_POST['username'],$_POST['password']);
+        if ($temp->conta_bloqueada == 1){
 
+            $user->username= $temp->username;
+            $user->nome_completo= $temp->nome_completo;
+            $user->data_nascimento= $temp->data_nascimento;
+            $user->email= $temp->email;
+            $user->isadmin= $temp->isadmin;
+
+            Redirect::toRoute('home/index');
+        }
+        else{
+
+            return;
+        }
     }
 
     public function register(){
