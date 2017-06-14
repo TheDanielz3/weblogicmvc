@@ -20,7 +20,6 @@ Router::get('home/login','HomeController/login');
 Router::get('home/topten','HomeController/topten');
 
 
-Router::post('home/submitlogin','HomeController/submitlogin');
 
 Router::get('home/register','HomeController/register');
 router::post('user/register','UserController/register');

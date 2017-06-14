@@ -4,13 +4,8 @@ use ArmoredCore\WebObjects\Post;
 use ArmoredCore\WebObjects\Redirect;
 use ArmoredCore\WebObjects\View;
 use ArmoredCore\Interfaces\ResourceControllerInterface;
+use Auth;
 
-/**
- * Created by PhpStorm.
- * User: smendes
- * Date: 08-04-2017
- * Time: 12:36
- */
 class UserController extends BaseController  {
     /**
      * @return mixed
@@ -22,17 +17,33 @@ class UserController extends BaseController  {
 
     }
 
-    public function register(){
+    public function login(){
 
+        $auth = new Auth();
+        $auth->findUserByNameAndPass($_POST['username'],$_POST['password']);
+
+        Redirect::toRoute('home/index');
+
+    }
+
+    public function register(){
         $new = new User();
+
         $new->username = $_POST["username"];
+
         $pass=$_POST["password"];
         $new->password = sha1($pass);
-        $new->fullname = $_POST["fullname"];
-        $time= strtotime ( $_POST["datebirth"]);
-        $date = date('Y-m-d',$time);
-        $new->email = $_POST["password"];
-        $new->datebirth = $date;
+
+        $new->nome_completo = $_POST["nome_completo"];
+
+        $time = strtotime(isset($_POST["datebirth"]));
+        $date = date('d-m-Y',$time);
+
+        $new->data_nascimento = $date;
+
+        $new->email = $_POST["email"];
+        $new->conta_bloqueada = 0;
+        $new ->isadmin = 0;
         $new->save();
         Redirect::toRoute('home/login');
     }
@@ -96,6 +107,8 @@ class UserController extends BaseController  {
      * @param $id
      * @return mixed
      */
+
+    /**
     public function update($id)
     {
         $user = User::find($id);
@@ -109,6 +122,7 @@ class UserController extends BaseController  {
             Redirect::flashToRoute('user/edit', ['user' => $user], $id);
         }
     }
+    */
 
     /**
      * @param $id

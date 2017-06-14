@@ -4,16 +4,14 @@ class Auth
 
 
 
-    public $password;
     public $hash;
-
+    public $new ;
     private $USERID;
     private $Admin;
     private $isBlocked;
     private $user;
     private $email;
     private $nome_completo;
-
 
 
     public function isAdmin(){
@@ -39,7 +37,21 @@ class Auth
 
     public function findUserByNameAndPass($username,$password){
 
-    User::find(array('conditions' => array('username = ? AND passoword = ?',$username,$password)));
+       $user = new User();
+
+       $password= sha1($password);
+
+        try{
+            if (User::find(array('conditions' => array('username = ? AND password = ?',$username,$password)))!= null){
+
+                $user = User::find(array('conditions' => array('username = ? AND password = ?',$username,$password)));
+                session_start($user);
+
+            }else{
+
+            }
+        }catch (Exception $e){}
+
     }
 }
 ?>

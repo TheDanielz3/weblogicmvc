@@ -27,7 +27,5 @@ class HomeController extends BaseController
 
     }
 
-    public function submitlogin(){
-    return View::make('user.submitlogin');
-    }
+
 }
