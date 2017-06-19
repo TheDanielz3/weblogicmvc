@@ -67,6 +67,15 @@ class UserController extends BaseController  {
         View::make('user.create');
     }
 
+    public function settings()
+    {
+        View::make('user.settings');
+    }
+    public function statistics()
+    {
+        View::make('user.statistics');
+    }
+
     /**
      * @return mixed
      */
