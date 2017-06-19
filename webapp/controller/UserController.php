@@ -4,7 +4,7 @@ use ArmoredCore\WebObjects\Post;
 use ArmoredCore\WebObjects\Redirect;
 use ArmoredCore\WebObjects\View;
 use ArmoredCore\Interfaces\ResourceControllerInterface;
-use Auth;
+
 
 class UserController extends BaseController  {
     /**
@@ -101,11 +101,16 @@ class UserController extends BaseController  {
             View::make('user.show', ['user' => $user]);
         }
     }
+    public function edit(){
+        return View::make('user.edit');
+
+    }
 
     /**
      * @param $id
      * @return mixed
      */
+    /**
     public function edit($id)
     {
         $user = User::find($id);
@@ -116,6 +121,7 @@ class UserController extends BaseController  {
             View::make('user.edit', ['user' => $user]);
         }
     }
+*/
 
     /**
      * @param $id

@@ -22,12 +22,13 @@ Router::get('home/topten','HomeController/topten');
 
 
 Router::get('home/register','HomeController/register');
-router::post('user/register','UserController/register');
+Router::post('user/register','UserController/register');
 Router::get('user/edit','UserController/edit');
 
 Router::get('user/','UserController/index');
 Router::get('user/index','UserController/index');
 Router::post('user/submitlogin','UserController');
+Router::get('user/edit','UserController/edit');
 
 
 
