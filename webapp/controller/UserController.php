@@ -23,7 +23,7 @@ class UserController extends BaseController  {
         $user= new User();
 
         $temp = $auth->findUserByNameAndPass($_POST['username'],$_POST['password']);
-        if ($temp->conta_bloqueada == 1){
+        if ($temp->conta_bloqueada == 0){
 
             $user->username= $temp->username;
             $user->nome_completo= $temp->nome_completo;
@@ -31,6 +31,7 @@ class UserController extends BaseController  {
             $user->email= $temp->email;
             $user->isadmin= $temp->isadmin;
 
+            $_SESSION['userdata'] = $user;
             Redirect::toRoute('home/index');
         }
         else{
