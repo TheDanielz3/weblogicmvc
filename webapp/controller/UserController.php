@@ -16,6 +16,10 @@ class UserController extends BaseController  {
         View::make('user.index', ['users' => $users]);
 
     }
+    public function logout(){
+        session_destroy();
+        Redirect::toRoute('home/index');
+    }
 
     public function login(){
 
@@ -36,7 +40,7 @@ class UserController extends BaseController  {
         }
         else{
 
-            return;
+            Redirect::toRoute('home/login');
         }
     }
 

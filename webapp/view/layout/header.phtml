@@ -31,10 +31,12 @@ if (isset($_SESSION['userdata'])) {
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+                <li><a href="<?= Url::toRoute('home/topten') ?>"> Top 10 <span class="sr-only">(current)</span></a></li>
 
-                <li><a href="<?= Url::toRoute('home/top10') ?>"> Top 10 <span class="sr-only">(current)</span></a></li>
+                <?php if($_SESSION['userdata']->isadmin == 1){?>
+                    <li><a href="<?= Url::toRoute('backend/index') ?>"> backend <span class="sr-only">(current)</span></a></li>
 
-
+                <?php }?>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -43,12 +45,12 @@ if (isset($_SESSION['userdata'])) {
                 <ul class="nav navbar-nav">
 
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">User
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Welcome, <?php  echo $_SESSION['userdata']->username ?>
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Settings</a></li>
-                            <li><a href="#">Log Out</a></li>
-                        </ul>
+                            <li><a href="<?php echo Url::toRoute('user/settings')?>">Settings</a></li>
+                            <li><a href="<?php echo Url::toRoute('user/logout')  ?>" >Log Out</a></li>
+                        </ul>1
                     </li>
 
                 </ul>
@@ -72,7 +74,7 @@ else {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <title>VIdeo Poker</title>
+    <title>Video Poker</title>
 
 </head>
 
@@ -89,10 +91,9 @@ else {
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+
                 <li><a href="<?= Url::toRoute('home/login') ?>"> Log In <span class="sr-only">(current)</span></a></li>
-                <li><a href="<?= Url::toRoute('home/register') ?>"> Register <span class="sr-only">(current)</span></a>
-                </li>
-                <li><a href="<?= Url::toRoute('user/edit') ?>"> useredit <span class="sr-only">(current)</span></a>
+                <li><a href="<?= Url::toRoute('home/register') ?>"> Register <span class="sr-only">(current)</span></a></li>
 
                 <li><a href="<?= Url::toRoute('home/topten') ?>"> Top 10 <span class="sr-only">(current)</span></a></li>
 

@@ -12,28 +12,29 @@ use ArmoredCore\Facades\Router;
  *  Use convention: controllerName@methodActionName
  ****************************************************************************/
 
+//Home
 Router::get('/',			'HomeController/index');
 Router::get('home/',		'HomeController/index');
 Router::get('home/index',	'HomeController/index');
 
 Router::get('home/login','HomeController/login');
 Router::get('home/topten','HomeController/topten');
+Router::get('home/register',    'HomeController/register');
 
+//User
+Router::post('user/register',   'UserController/register');
+Router::get('user/edit',        'UserController/edit');
+Router::post('user/login',      'UserController/login');
+Router::post('user/edit',       'UserController/edit');
+//Router::post('user/update',       'UserController/update');
+Router::get('user/settings',    'UserController/settings');
+Router::post('user/statistics', 'UserController/statistics');
 
+Router::get('user/logout',      'UserController/logout');
 
-Router::get('home/register','HomeController/register');
-Router::post('user/register','UserController/register');
-Router::get('user/edit','UserController/edit');
-
-Router::get('user/','UserController/index');
-Router::get('user/index','UserController/index');
-Router::post('user/submitlogin','UserController');
-Router::post('user/edit','UserController/edit');
-Router::get('user/settings','UserController/settings');
-Router::post('user/statistics','UserController/statistics');
-
-
-
+//Backend
+Router::get('backend/index',	'BackendController/index');
+Router::get('backend/',     	'BackendController/index');
 
 
 
