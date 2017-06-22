@@ -29,11 +29,17 @@ class Deck
         $this->_bet = $bet;
     }
 
-    public function replaceCardsInHand(array $lockedCards, $_bet){
+    public function replaceCardsInHand(array $lockedCards){
 
         // validar se $lockedcards existe na _hand
 
+            for ($i=1;i==5;$i++){
 
+                for($a=1;$i==5;$i++){
+
+
+                }
+            }
         // substituir as cartas desepejadas pelas novas
 
 

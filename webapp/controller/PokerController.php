@@ -42,8 +42,16 @@ class PokerController
 
             $locked = $_POST['lockedcards'];
 
+            $d->replaceCardsInHand($locked);
+
+            $hand = $d->getHand();
+
+
+            $HE   = new JacksOrBetterHandEvaluator();
+            
             var_dump($locked);
             die();
+
 
 
 
