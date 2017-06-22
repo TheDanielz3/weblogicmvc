@@ -1,4 +1,8 @@
 <?php
+use ArmoredCore\Controllers\BaseController;
+use ArmoredCore\WebObjects\Post;
+use ArmoredCore\WebObjects\Redirect;
+use ArmoredCore\WebObjects\View;
 
 /**
  * Created by PhpStorm.
@@ -8,11 +12,13 @@
  */
 class PokerController
 {
+    public function GameView(){
+        View::make('game.gameview');
+    }
+
     public function SetBet(){
 
-
         $bet = $_POST['bet'];
-        $coluna = $bet;
 
         // validar se a bet está entre 1 a 5
 
@@ -25,8 +31,7 @@ class PokerController
 
 
         $_SESSION['GAMEDECK'] = $d;
-
-        return View::make('poker.gamestart', [ 'mao' => $mao, 'bet' => $bet]);
+        return View::make('game.lockedcards', [ 'mao' => $mao, 'bet' => $bet]);
     }
 
 
@@ -46,9 +51,11 @@ class PokerController
 
             $hand = $d->getHand();
 
-
             $HE   = new JacksOrBetterHandEvaluator();
-            
+
+            $comb = $HE->evaluateHand($hand);
+
+            $valor = $HE->getPrize($d->_bet,$comb);
             var_dump($locked);
             die();
 

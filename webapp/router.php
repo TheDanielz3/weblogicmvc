@@ -36,8 +36,8 @@ Router::get('user/logout',      'UserController/logout');
 Router::get('backend/index',	'BackendController/index');
 Router::get('backend/',     	'BackendController/index');
 
-Router::get('game/setbet',     'PokerController/SetBet');
-
+Router::post('game/setbet',     'PokerController/SetBet');
+Router::get('game/gameview',   'PokerController/gameview');
 
 
 

@@ -30,6 +30,21 @@ Layout::includeLayout('header'); ?>
 
 
                             }
+                            table td.classone{
+                                background-color:white ;
+                            }
+                            table td.classtwo{
+                                background-color:white ;
+                            }
+                            table td.classthree{
+                                background-color:white ;
+                            }
+                            table td.classfour{
+                                background-color:white ;
+                            }
+                            table td.classfive{
+                                background-color:white ;
+                            }
                             table th {
                                 border: 1px solid black;
                                 text-align :center ;
@@ -53,89 +68,86 @@ Layout::includeLayout('header'); ?>
 
                         </tg>
                         <tr>
-                            <td>Royal Flush .............</td>
-                            <td >250</td>
-                            <td>500</td>
-                            <td>750</td>
-                            <td>1000</td>
-                            <td>4000</td>
+                            <td >Royal Flush .............</td>
+                            <td class="classone" >250</td>
+                            <td class="classtwo">500</td>
+                            <td class="classthree">750</td>
+                            <td class="classfour">1000</td>
+                            <td class="classfive">4000</td>
 
 
 
                         </tr>
                         <tr>
                             <td>Straight Flush ..........</td>
-                            <td>50</td>
-                            <td>100</td>
-                            <td>150</td>
-                            <td>200</td>
-                            <td>250</td>
+                            <td class="classone">50</td>
+                            <td class="classtwo">100</td>
+                            <td class="classthree">150</td>
+                            <td class="classfour">200</td>
+                            <td class="classfive">250</td>
 
                         </tr>
                         <tr>
                             <td>Four of a Kind .........</td>
-                            <td>25</td>
-                            <td>50</td>
-                            <td>75</td>
-                            <td>100</td>
-                            <td>125</td>
+                            <td class="classone">25</td>
+                            <td class="classtwo">50</td>
+                            <td class="classthree">75</td>
+                            <td class="classfour">100</td>
+                            <td class="classfive">125</td>
                         </tr>
                         <tr>
                             <td>Full House ..............</td>
-                            <td>9</td>
-                            <td>18</td>
-                            <td>27</td>
-                            <td>36</td>
-                            <td>45</td>
+                            <td class="classone">9</td>
+                            <td class="classtwo">18</td>
+                            <td class="classthree">27</td>
+                            <td class="classfour">36</td>
+                            <td class="classfive">45</td>
                         </tr>
                         <tr>
                             <td>Flush ......................</td>
-                            <td>6</td>
-                            <td>12</td>
-                            <td>18</td>
-                            <td>24</td>
-                            <td>30</td>
+                            <td class="classone">6</td>
+                            <td class="classtwo">12</td>
+                            <td class="classthree">18</td>
+                            <td class="classfour">24</td>
+                            <td class="classfive">30</td>
                         </tr>
                         <tr>
                             <td>Straight ...................</td>
-                            <td>4</td>
-                            <td>8</td>
-                            <td>12</td>
-                            <td>16</td>
-                            <td>20</td>
+                            <td class="classone">4</td>
+                            <td class="classtwo">8</td>
+                            <td class="classthree">12</td>
+                            <td class="classfour">16</td>
+                            <td class="classfive">20</td>
                         </tr>
                         <tr>
                             <td>Three of a Kind........</td>
-                            <td>3</td>
-                            <td>6</td>
-                            <td>9</td>
-                            <td>12</td>
-                            <td>15</td>
+                            <td class="classone">3</td>
+                            <td class="classtwo">6</td>
+                            <td class="classthree">9</td>
+                            <td class="classfour">12</td>
+                            <td class="classfive">15</td>
                         </tr>
                         <tr>
                             <td>Two Pair .................</td>
-                            <td>2</td>
-                            <td>4</td>
-                            <td>6</td>
-                            <td>8</td>
-                            <td>10</td>
+                            <td class="classone">2</td>
+                            <td class="classtwo">4</td>
+                            <td class="classthree">6</td>
+                            <td class="classfour">8</td>
+                            <td class="classfive">10</td>
                         </tr>
                         <tr>
                             <td>Jacks or Better .......</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
+                            <td class="classone">1</td>
+                            <td class="classtwo">2</td>
+                            <td class="classthree">3</td>
+                            <td class="classfour">4</td>
+                            <td class="classfive">5</td>
                         </tr>
                     </table>
                     <br>
-                    <button type="button" onclick= var1 = "black">Bet 1 Coin</button>          &nbsp;&nbsp;&nbsp;            <button type="button" onclick="alert('Hello world!')">Bet 2 Coin</button> &nbsp;&nbsp;&nbsp;
-                    <button type="button" onclick="alert('Hello world!')">Bet 3 Coin</button>           &nbsp;&nbsp;&nbsp;           <button type="button" onclick="alert('Hello world!')">Bet 4 Coin</button> &nbsp;&nbsp;&nbsp;
-                    <button type="button" onclick="alert('Hello world!')">Bet 5 Coin</button>
-
-
-
+                    <form action="<?php echo Url::toRoute('game/setbet')?>" method="post">
+                    <button  value="1" name="bet" type="submit" >Bet 1 Coin</button>  &nbsp;&nbsp;&nbsp;<button value="2" name="bet" type="submit" >Bet 2 Coin</button>  &nbsp;&nbsp;&nbsp;<button value="3" name="bet" type="submit" >Bet 3 Coin</button>  &nbsp;&nbsp;&nbsp;<button value="4" name="bet" type="submit" >Bet 4 Coin</button>  &nbsp;&nbsp;&nbsp;<button value=5 name="bet" type="submit" >Bet 5 Coin</button>  &nbsp;&nbsp;&nbsp;
+                    </form>
 
                     </body>
                     </html>
