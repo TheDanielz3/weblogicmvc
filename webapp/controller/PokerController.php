@@ -1,34 +1,60 @@
 <?php
-use ArmoredCore\Controllers\BaseController;
-use ArmoredCore\WebObjects\Redirect;
-use ArmoredCore\WebObjects\Session;
-use ArmoredCore\WebObjects\View;
 
-class PokerController extends BaseController
+/**
+ * Created by PhpStorm.
+ * User: joaos
+ * Date: 17/05/2017
+ * Time: 13:19
+ */
+class PokerController
 {
-    public function game(){
+    public function SetBet(){
 
-        return View::make('Game.gameview');
+
+        $bet = $_POST['bet'];
+        $coluna = $bet;
+
+        // validar se a bet está entre 1 a 5
+
+        $d = new Deck($bet);
+
+        $d->dealCards(5);
+
+        $mao = $d->getHand();
+
+
+
+        $_SESSION['GAMEDECK'] = $d;
+
+        return View::make('poker.gamestart', [ 'mao' => $mao, 'bet' => $bet]);
     }
 
-    public function bet1(){
 
-        return View::make('Game.betone');
-    }
-    public function bet2(){
+    function LockCards(){
 
-        return View::make('Game.bettwo');
-    }
-    public function bet3(){
+        if (Session::has === false){
 
-        return View::make('Game.betthree');
-    }
-    public function bet4(){
+            return View::make ('home.index');
 
-        return View::make('Game.betfour');
-    }
-    public function bet5(){
+        }else{
 
-        return View::make('Game.betfive');
+            $d = Session::get('GAMEDECK');
+
+            $locked = $_POST['lockedcards'];
+
+            var_dump($locked);
+            die();
+
+
+
+        }
+
+
     }
+
+    /*bet
+
+    deals
+    deal
+    payout*/
 }

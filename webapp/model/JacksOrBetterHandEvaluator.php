@@ -8,7 +8,7 @@
  */
 class JacksOrBetterHandEvaluator implements PokerHandEvaluatorInterface
 {
-     const NONE = 0;
+     const  NONE = 0;
      const JACKS_OR_BETTER = 1;
      const TWO_PAIR = 2;
      const THREE_OF_A_KIND = 3;
@@ -18,7 +18,6 @@ class JacksOrBetterHandEvaluator implements PokerHandEvaluatorInterface
      const FOUR_OF_A_KIND = 30;
      const STRAIGHT_FLUSH = 50;
      const ROYAL_FLUSH = 250;
-    // acrescentar as restantes combinações
 
     protected $_currentHand;
 

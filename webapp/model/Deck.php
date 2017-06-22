@@ -9,17 +9,38 @@
 class Deck
 {
     protected $_deck = [];
-    protected $_hand;
+    protected $_hand = [];
     protected $_bet;
 
-    public function __construct(PokerHand $pokerHand)
+    /**
+     * @return array
+     */
+    public function getHand()
+    {
+        return $this->_hand;
+    }
+
+    public function __construct($bet)
     {
         $this->openDeck();
         $this->shuffleDeck();
         $this->optimizeDeck();
-        $this->bet();
+
+        $this->_bet = $bet;
     }
 
+    public function replaceCardsInHand(array $lockedCards, $_bet){
+
+        // validar se $lockedcards existe na _hand
+
+
+        // substituir as cartas desepejadas pelas novas
+
+
+        // a hand continua com 5 cartas
+
+
+    }
     protected function openDeck(){
 
         //load cards in _deck
@@ -59,7 +80,7 @@ class Deck
     /**
      * @return array
      */
-    public function getDeck(): array
+    public function getDeck()
     {
         return $this->_deck;
     }
@@ -69,17 +90,17 @@ class Deck
      * @return array
      */
     public function dealCards($numCards) {
-        $this->_hand->setHand(array_splice($this->_deck, 0, 5, null));
+
+        $this->setHand(array_splice($this->_deck, 0, 5, null));
 
     }
 
 
+    public function setHand(array $hand)
+    {
+        // validar o tamanho de hand (tem de ser = 5)
 
-    public function replaceCardsInHand(array $lockedCards,$hand){
-
-        // validar se $lockedcards existe na _hand
-        // substituir as cartas desepejadas pelas novas
-        // a hand continua com 5 cartas
+            $this->_hand = $hand;
 
 
 
