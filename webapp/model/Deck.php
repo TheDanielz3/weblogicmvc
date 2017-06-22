@@ -10,13 +10,14 @@ class Deck
 {
     protected $_deck = [];
     protected $_hand;
+    protected $_bet;
 
     public function __construct(PokerHand $pokerHand)
     {
         $this->openDeck();
         $this->shuffleDeck();
         $this->optimizeDeck();
-        $this->_hand = $pokerHand;
+        $this->bet();
     }
 
     protected function openDeck(){
@@ -68,20 +69,19 @@ class Deck
      * @return array
      */
     public function dealCards($numCards) {
-
         $this->_hand->setHand(array_splice($this->_deck, 0, 5, null));
 
     }
 
 
-    public function replaceCards(){
 
-        // substituir as cartas na mão
+    public function replaceCardsInHand(array $lockedCards,$hand){
 
-        $this->_hand->replaceCardsInHand($this,$this->getDeck());
+        // validar se $lockedcards existe na _hand
+        // substituir as cartas desepejadas pelas novas
+        // a hand continua com 5 cartas
 
 
-        // chamar o método $this->_hand->replaceCardsInHand(....)
 
     }
 

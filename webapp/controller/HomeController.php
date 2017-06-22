@@ -27,5 +27,10 @@ class HomeController extends BaseController
 
     }
 
+    public function game(){
+
+        return View::make('Game.gameview');
+    }
+
 
 }
