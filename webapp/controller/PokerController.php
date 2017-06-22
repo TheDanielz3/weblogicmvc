@@ -10,25 +10,9 @@ class PokerController extends BaseController
 
         return View::make('Game.gameview');
     }
+    public function locked(){
 
-    public function bet1(){
-
-        return View::make('Game.betone');
+        return View::make('Game.lockedcards');
     }
-    public function bet2(){
 
-        return View::make('Game.bettwo');
-    }
-    public function bet3(){
-
-        return View::make('Game.betthree');
-    }
-    public function bet4(){
-
-        return View::make('Game.betfour');
-    }
-    public function bet5(){
-
-        return View::make('Game.betfive');
-    }
 }
