@@ -32,23 +32,23 @@
       <file leaf-file-name="gameview.phtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webapp/view/Game/gameview.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2433">
-              <caret line="152" column="40" selection-start-line="152" selection-start-column="40" selection-end-line="152" selection-end-column="40" />
+            <state relative-caret-position="527">
+              <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
               <folding>
                 <element signature="e#6#49#0#PHP" expanded="true" />
                 <element signature="e#1302#1319#0#HTML" expanded="true" />
+                <element signature="e#4692#4698#0#HTML" expanded="true" />
                 <element signature="e#4698#4704#0#HTML" expanded="true" />
                 <element signature="e#4704#4710#0#HTML" expanded="true" />
-                <element signature="e#4710#4716#0#HTML" expanded="true" />
+                <element signature="e#4796#4802#0#HTML" expanded="true" />
                 <element signature="e#4802#4808#0#HTML" expanded="true" />
                 <element signature="e#4808#4814#0#HTML" expanded="true" />
-                <element signature="e#4814#4820#0#HTML" expanded="true" />
+                <element signature="e#4919#4925#0#HTML" expanded="true" />
                 <element signature="e#4925#4931#0#HTML" expanded="true" />
                 <element signature="e#4931#4937#0#HTML" expanded="true" />
-                <element signature="e#4937#4943#0#HTML" expanded="true" />
+                <element signature="e#5022#5028#0#HTML" expanded="true" />
                 <element signature="e#5028#5034#0#HTML" expanded="true" />
                 <element signature="e#5034#5040#0#HTML" expanded="true" />
-                <element signature="e#5040#5046#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,8 +164,8 @@
         <option value="$PROJECT_DIR$/webapp/controller/HomeController.php" />
         <option value="$PROJECT_DIR$/webapp/controller/PokerController.php" />
         <option value="$PROJECT_DIR$/webapp/view/Game/betone.phtml" />
-        <option value="$PROJECT_DIR$/webapp/view/Game/gameview.phtml" />
         <option value="$PROJECT_DIR$/webapp/router.php" />
+        <option value="$PROJECT_DIR$/webapp/view/Game/gameview.phtml" />
       </list>
     </option>
   </component>
@@ -756,12 +756,12 @@
       <workItem from="1497880294140" duration="5248000" />
       <workItem from="1497886340562" duration="2976000" />
       <workItem from="1498138008439" duration="1162000" />
-      <workItem from="1498139454794" duration="4266000" />
+      <workItem from="1498139454794" duration="5251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="434550000" />
+    <option name="totallyTimeSpent" value="435535000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1144,23 +1144,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/view/Game/gameview.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2433">
-          <caret line="152" column="40" selection-start-line="152" selection-start-column="40" selection-end-line="152" selection-end-column="40" />
+        <state relative-caret-position="527">
+          <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
           <folding>
             <element signature="e#6#49#0#PHP" expanded="true" />
             <element signature="e#1302#1319#0#HTML" expanded="true" />
+            <element signature="e#4692#4698#0#HTML" expanded="true" />
             <element signature="e#4698#4704#0#HTML" expanded="true" />
             <element signature="e#4704#4710#0#HTML" expanded="true" />
-            <element signature="e#4710#4716#0#HTML" expanded="true" />
+            <element signature="e#4796#4802#0#HTML" expanded="true" />
             <element signature="e#4802#4808#0#HTML" expanded="true" />
             <element signature="e#4808#4814#0#HTML" expanded="true" />
-            <element signature="e#4814#4820#0#HTML" expanded="true" />
+            <element signature="e#4919#4925#0#HTML" expanded="true" />
             <element signature="e#4925#4931#0#HTML" expanded="true" />
             <element signature="e#4931#4937#0#HTML" expanded="true" />
-            <element signature="e#4937#4943#0#HTML" expanded="true" />
+            <element signature="e#5022#5028#0#HTML" expanded="true" />
             <element signature="e#5028#5034#0#HTML" expanded="true" />
             <element signature="e#5034#5040#0#HTML" expanded="true" />
-            <element signature="e#5040#5046#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
