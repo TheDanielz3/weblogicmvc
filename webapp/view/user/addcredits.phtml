@@ -1,0 +1,40 @@
+<?php
+use ArmoredCore\WebObjects\Asset;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+Layout::includeLayout('header'); ?>
+
+
+    <header>
+
+    </header>
+
+    <body>
+
+    <div class="col-md-6 col-md-offset-3 col-sm-7 col-sm-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3 class="thin text-center">Here you can change your account details.</h3>
+
+                <form action="<?php echo Url::toRoute('user/credit')?>" method="post">
+                    <div class="top-margin">
+                        <label>Amount of credits <span class="text-danger"></span></label>
+                        <input type="text" name="creditos" class="form-control">
+                    </div>
+                    <br>
+                    <div class="col-lg-7 text-right" >
+                        <button class="btn btn-action" type="submit"  background-color="red">Charge Account</button>
+                    </div>
+
+
+
+                </form>
+            </div>
+        </div>
+
+
+
+    </body>
+
+
+<?php Layout::includeLayout('footer')?>

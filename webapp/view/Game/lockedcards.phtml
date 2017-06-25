@@ -1,5 +1,5 @@
 <?php
-
+$bet =$_POST['bet'];
 use ArmoredCore\Controllers\BaseController;
 use ArmoredCore\WebObjects\Redirect;
 use ArmoredCore\WebObjects\Session;
@@ -23,43 +23,38 @@ Layout::includeLayout('header'); ?>
                     <html>
                     <head>
                         <style>
-                            <?php if ($_POST['bet'] == "1" ){ ?>
-                            table td.classone {
-                                background-color: grey;
-                            }
-                            <?php } else{ if ($_POST['bet'] == "2" ){ ?>
-
-                            table td.classtwo{
-                                background-color:grey ;
-                            }
-
-                            <?php } else{ if($_POST['bet'] == "3" ){?>
-                                       table td.classthree{
-                                background-color:grey ;
-                            }
-
-                            <?php } else{ if ($_POST['bet'] == "4" ){ ?>
-                            table td.classfour {
+                            <?php if ($bet == "1" ){ ?>
+                                table td.classone {
                                 background-color: grey;
                             }
 
-                            <?php } else{ if ($_POST['bet'] == "5" ){   ?>
+                            <?php } else{ if ($bet == "2" ){ ?>
+                                table td.classtwo{
+                                background-color:grey ;
+                            }
 
+                            <?php } else{ if($bet == "3" ){?>
+                                table td.classthree{
+                                background-color:grey ;
+                            }
+
+                            <?php } else{ if ($bet == "4" ){ ?>
+                                table td.classfour {
+                                background-color: grey;
+                            }
+
+                            <?php } else{ if ($bet == "5" ){   ?>
                                 table td.classfive {
                                     background-color: grey;
                                 }
 
                             <?php }}}}}?>
 
-
-
                             table td {
                                 border-left: 1px solid black;
                                 border-right:1px solid black;
                                 text-align :center ;
                             }
-
-
 
                             table th {
                                 border: 1px solid black;
@@ -161,7 +156,13 @@ Layout::includeLayout('header'); ?>
                         </tr>
                     </table>
                     <br>
+                    <?php
 
+                        $hand = $_SESSION['mao'];
+                        for($i=0;$i<5;$i++){
+                            echo $hand[$i];
+                        }
+                    ?>
 
 
                     </body>

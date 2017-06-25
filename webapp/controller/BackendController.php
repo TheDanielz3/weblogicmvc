@@ -20,4 +20,22 @@ class BackendController extends BaseController
         return View::make('backend.index');
     }
 
+
+    public  function users(){
+
+        $_SESSION['users'] =  User::all();
+
+        return View::make('backend.users');
+    }
+    public function edit(){
+
+        $a = new Auth();
+
+        $userid = $_POST['edit'];
+
+        $user = User::find($userid);
+
+        return View::make('backend.edit',['user' =>$user]);
+
+    }
 }

@@ -35,6 +35,15 @@ class Auth
         return $this->nome_completo;
     }
 
+     public  function findUserByID($id){
+         if (User::find(array('conditions' => 'id = ?' , $id))!=null){
+             $user = User::find(array('conditions' => array('id = ?' , $id)));
+
+             return $user;
+
+         }
+     }
+
     public function findUserByNameAndPass($username,$password){
 
        $password= sha1($password);

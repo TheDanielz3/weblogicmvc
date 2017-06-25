@@ -19,7 +19,6 @@ class PokerController
     public function SetBet(){
 
         $bet = $_POST['bet'];
-
         // validar se a bet está entre 1 a 5
 
         $d = new Deck($bet);
@@ -29,9 +28,11 @@ class PokerController
         $mao = $d->getHand();
 
 
+     //   var_dump($mao);
 
         $_SESSION['GAMEDECK'] = $d;
-        return View::make('game.lockedcards', [ 'mao' => $mao, 'bet' => $bet]);
+        $_SESSION['mao']= $mao;
+        return View::make('game.lockedcards', [ 'bet' => $bet ] );
     }
 
 

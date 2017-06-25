@@ -1,7 +1,50 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: ariso
- * Date: 2017-06-22
- * Time: 14:34
- */
+<?php $users = $_SESSION['users'];
+
+use ArmoredCore\WebObjects\Asset;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+Layout::includeLayout('header'); ?>
+
+
+
+    <body>
+
+    <table align="center" style="width:50%" border="2px black">
+            <tr>
+                <th>Id </th>
+                <th>Username </th>
+                <th>Password </th>
+                <th>Full Name </th>
+                <th>Email </th>
+                <th>Is Admin </th>
+                <th>Is Blocked </th>
+
+            </tr>
+        <?php
+            $i =count($users);
+           for($a=0;$a<$i;$a++){
+               $useredit = $users[$a]->id; ?>
+
+               <tr>
+                   <th><?php echo $users[$a]->id  ?></th>
+                   <th><?php echo $users[$a]->username  ?></th>
+                   <th><?php echo $users[$a]->password  ?></th>
+                   <th><?php echo $users[$a]->nome_completo  ?></th>
+                   <th><?php echo $users[$a]->email  ?></th>
+                   <th><?php echo $users[$a]->isadmin  ?></th>
+                   <th><?php echo $users[$a]->conta_bloqueada  ?></th>
+                   <th> <form method="post" action="<?php echo Url::toRoute('backend/edit'); ?>">
+                            <button type="submit" name="edit" value="<?php echo $useredit?>" >Edit</button>
+                       </form> </th>
+
+               </tr>
+
+         <?php  } ?>
+
+    </table>
+
+    </body>
+    <!-- Intro -->
+
+
+<?php Layout::includeLayout('footer')?>

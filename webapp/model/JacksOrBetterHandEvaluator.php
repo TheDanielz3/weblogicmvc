@@ -26,9 +26,6 @@ class JacksOrBetterHandEvaluator implements PokerHandEvaluatorInterface
         $combination = NONE;
 
         // detetar a combinação de cartas na mão do jogador
-        for ($i=0;$i==4;$i++){
-           $hand[$i]= str_split($hand[$i]);
-        }
 
 
         // colocar a melhor combinação na mão

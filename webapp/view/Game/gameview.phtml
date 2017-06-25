@@ -58,7 +58,7 @@ Layout::includeLayout('header'); ?>
                     <body>
 
                     <table style="width:90%">
-                        <tg >
+                        <tr>
                             <th>Prizes</th>
                             <th>Bet 1</th>
                             <th>Bet 2</th>
@@ -66,7 +66,7 @@ Layout::includeLayout('header'); ?>
                             <th>Bet 4</th>
                             <th>Bet 5</th>
 
-                        </tg>
+                        </tr>
                         <tr>
                             <td >Royal Flush .............</td>
                             <td class="classone" >250</td>
@@ -146,7 +146,11 @@ Layout::includeLayout('header'); ?>
                     </table>
                     <br>
                     <form action="<?php echo Url::toRoute('game/setbet')?>" method="post">
-                    <button  value="1" name="bet" type="submit" >Bet 1 Coin</button>  &nbsp;&nbsp;&nbsp;<button value="2" name="bet" type="submit" >Bet 2 Coin</button>  &nbsp;&nbsp;&nbsp;<button value="3" name="bet" type="submit" >Bet 3 Coin</button>  &nbsp;&nbsp;&nbsp;<button value="4" name="bet" type="submit" >Bet 4 Coin</button>  &nbsp;&nbsp;&nbsp;<button value=5 name="bet" type="submit" >Bet 5 Coin</button>  &nbsp;&nbsp;&nbsp;
+                        <button value="1" name="bet" type="submit" >Bet 1 Coin</button>&nbsp;&nbsp;&nbsp;
+                        <button value="2" name="bet" type="submit" >Bet 2 Coin</button>&nbsp;&nbsp;&nbsp;
+                        <button value="3" name="bet" type="submit" >Bet 3 Coin</button>&nbsp;&nbsp;&nbsp;
+                        <button value="4" name="bet" type="submit" >Bet 4 Coin</button>&nbsp;&nbsp;&nbsp;
+                        <button value="5" name="bet" type="submit" >Bet 5 Coin</button>&nbsp;&nbsp;&nbsp;
                     </form>
 
                     </body>

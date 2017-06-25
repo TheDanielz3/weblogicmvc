@@ -10,12 +10,18 @@ class UserController extends BaseController  {
     /**
      * @return mixed
      */
-    public function index()
-    {
-        $users = User::all();
-        View::make('user.index', ['users' => $users]);
+    public function credits(){
+        $new = new Credits();
+        $newtime = new DateTime();
+
+        $time =  $newtime->format('Y/m/d s:i:H');
+        var_dump($time);
+
+        $new->data_hora = $time;
+        $new->
 
     }
+
     public function logout(){
         session_destroy();
         Redirect::toRoute('home/index');
@@ -80,28 +86,7 @@ class UserController extends BaseController  {
         View::make('user.statistics');
     }
 
-    /**
-     * @return mixed
-     */
-    public function store()
-    {
-        // create new resource (activerecord/model) instance
-        // your form name fields must match the ones of the table fields
-        $user = new User(Post::getAll());
 
-        if($user->is_valid()){
-            $user->save();
-            Redirect::toRoute('user/index');
-        } else {
-            // return form with data and errors
-            Redirect::flashToRoute('user/create', ['user' => $user]);
-        }
-    }
-
-    /**
-     * @param $id
-     * @return mixed
-     */
     public function show($id)
     {
         $user = User::find($id);
@@ -119,22 +104,7 @@ class UserController extends BaseController  {
 
     }
 
-    /**
-     * @param $id
-     * @return mixed
-     */
-    /**
-    public function edit($id)
-    {
-        $user = User::find($id);
 
-        if (is_null($user)) {
-            // redirect to standard error page
-        } else {
-            View::make('user.edit', ['user' => $user]);
-        }
-    }
-*/
 
     /**
      * @param $id
@@ -157,14 +127,4 @@ class UserController extends BaseController  {
     }
     */
 
-    /**
-     * @param $id
-     * @return mixed
-     */
-   /* public function destroy($id)
-    {
-        $book = User::find($id);
-        $book->delete();
-        Redirect::toRoute('book/index');
-    }*/
 }

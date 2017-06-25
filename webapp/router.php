@@ -13,12 +13,12 @@ use ArmoredCore\Facades\Router;
  ****************************************************************************/
 
 //Home
-Router::get('/',			'HomeController/index');
-Router::get('home/',		'HomeController/index');
-Router::get('home/index',	'HomeController/index');
+Router::get('/',			    'HomeController/index');
+Router::get('home/',	    	'HomeController/index');
+Router::get('home/index',	    'HomeController/index');
 
-Router::get('home/login','HomeController/login');
-Router::get('home/topten','HomeController/topten');
+Router::get('home/login',       'HomeController/login');
+Router::get('home/topten',      'HomeController/topten');
 Router::get('home/register',    'HomeController/register');
 
 //User
@@ -35,9 +35,11 @@ Router::get('user/logout',      'UserController/logout');
 //Backend
 Router::get('backend/index',	'BackendController/index');
 Router::get('backend/',     	'BackendController/index');
+Router::get('backend/users',   'BackendController/users');
+Router::post('backend/edit',   'BackendController/edit');
 
 Router::post('game/setbet',     'PokerController/SetBet');
-Router::get('game/gameview',   'PokerController/gameview');
+Router::get('game/gameview',    'PokerController/gameview');
 
 
 
